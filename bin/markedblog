@@ -1,0 +1,104 @@
+#!/usr/bin/env ruby
+require 'gli'
+begin # XXX: Remove this begin/rescue before distributing your app
+require 'markedblog'
+rescue LoadError
+  STDERR.puts "In development, you need to use `bundle exec bin/todo` to run your app"
+  STDERR.puts "At install-time, RubyGems will make sure lib, etc. are in the load path"
+  STDERR.puts "Feel free to remove this message from bin/markedblog now"
+  exit 64
+end
+
+include GLI::App
+
+program_desc 'Create a static blog from MultiMarkdown files.'
+
+version Markedblog::VERSION
+
+desc 'Describe some switch here'
+switch [:s,:switch]
+
+desc 'Compile the blog from the specified directory.'
+default_value 'current directory.'
+arg_name '/to/compile'
+flag [:d,:directory]
+
+desc 'Output path.'
+default_value '../output'
+arg_name '/output/dir'
+flag [:o,:output]
+
+desc 'Create a new, empty blog structure, with no framework.'
+arg_name 'Describe arguments to create here'
+command :create do |c|
+  c.desc 'Describe a switch to create'
+  c.switch :s
+
+  c.desc 'Describe a flag to create'
+  c.default_value 'default'
+  c.flag :f
+  c.action do |global_options,options,args|
+
+    # Your command logic here
+     
+    # If you have any errors, just raise them
+    # raise "that command made no sense"
+
+    puts "create command ran"
+  end
+end
+
+desc 'Create a new, empty blog framework.'
+arg_name 'Describe arguments to scaffold here'
+command :scaffold do |c|
+  c.action do |global_options,options,args|
+    puts "scaffold command ran"
+  end
+end
+
+desc 'Compile the current blog into static files.'
+arg_name 'Describe arguments to compile here'
+command :compile do |c|
+  c.action do |global_options,options,args|
+    puts "compile command ran"
+  end
+end
+
+desc 'Describe new here'
+arg_name 'Describe arguments to new here'
+command :new do |c|
+  c.action do |global_options,options,args|
+    puts "new command ran with #{args}"
+  end
+end
+
+desc 'Change the way the app runs by default.'
+arg_name 'Section.settting'
+command :settings do |s|
+  s.action do |global_options,options,args|
+    puts "settings command ran"
+  end
+end
+
+pre do |global,command,options,args|
+  # Pre logic here
+  # Return true to proceed; false to abourt and not call the
+  # chosen command
+  # Use skips_pre before a command to skip this block
+  # on that command only
+  true
+end
+
+post do |global,command,options,args|
+  # Post logic here
+  # Use skips_post before a command to skip this
+  # block on that command only
+end
+
+on_error do |exception|
+  # Error logic here
+  # return false to skip default error handling
+  true
+end
+
+exit run(ARGV)

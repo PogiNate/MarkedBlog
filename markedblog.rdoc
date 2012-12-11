@@ -1,0 +1,5 @@
+= markedblog
+
+Generate this with
+    markedblog rdoc
+After you have described your command line interface

@@ -1,0 +1,6 @@
+= markedblog
+
+Describe your project here
+
+:include:markedblog.rdoc
+
