@@ -1,7 +1,7 @@
 MarkedBlog
 ==========
 
-## (Yet Another) Static BLog generator, but this time with *style*.
+## (Yet Another) Static Blog generator, but this time with *style*.
 
 MarkedBlog is my whack at a simple way to create static websites from good ol' MultiMarkdown.
 
