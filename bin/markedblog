@@ -64,15 +64,15 @@ command :compile do |c|
   end
 end
 
-desc 'Describe new here'
-arg_name 'Describe arguments to new here'
+desc 'Create a new blog post or page.'
+arg_name 'ArticleType'
 command :new do |c|
   c.action do |global_options,options,args|
     puts "new command ran with #{args}"
   end
 end
 
-desc 'Change the way the app runs by default.'
+desc 'Change the way the app runs for your current blog.'
 arg_name 'Section.settting'
 command :settings do |s|
   s.action do |global_options,options,args|
