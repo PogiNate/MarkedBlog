@@ -19,7 +19,7 @@ desc 'Describe some switch here'
 switch [:s,:switch]
 
 desc 'Compile the blog from the specified directory.'
-default_value 'current directory.'
+default_value './'
 arg_name '/to/compile'
 flag [:d,:directory]
 
