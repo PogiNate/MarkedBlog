@@ -5,4 +5,4 @@
         Partials
         Articles
     Data
-    Output
+    Site
