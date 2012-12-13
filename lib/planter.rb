@@ -59,7 +59,7 @@ class Planter
     return "---\n" + lines.join("\n")
   end
 
-  def plant(incoming)
+  def plant(incoming, *names)
     data = ""
     if File.exists? incoming
        template = incoming
@@ -76,8 +76,8 @@ class Planter
       exit 1
     end
     data.strip!
-
-    yaml           = YAML.load(text_to_yaml(data, ARGV))
+    
+    yaml = YAML.load(text_to_yaml(data, names))
     dirs_to_create = get_hierarchy(yaml)
 
     dirs_to_create.each do |dir|
