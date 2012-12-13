@@ -7,9 +7,11 @@ MarkedBlog is my whack at a simple way to create static websites from good ol' M
 
 ##Whyyyyyyy? Aren't there enough of these already?
 
-Well, probably. Which means it's an idea whose time has come. I'm just adding my two cents to the conversation. Our main differentiators are the tools we choose: MarkedBlog uses [MulitMarkdown][mmd] instead of regular Markdown or Git-Flavored Markdown, uses [LESS][less] instead of Liquid, and basically is built according to the defaults I want in my static blog creator [^future] .
+Well, probably. Which means it's an idea whose time has come. I'm just adding my two cents to the conversation and mixing metaphors like a house on fire.
 
-##Features? ##
+Our main differentiators are the tools we choose: MarkedBlog uses [MulitMarkdown][mmd] instead of regular Markdown or Github-Flavored Markdown, uses [LESS][less] instead of Liquid, and basically is built according to the defaults I want in my static blog creator. (At least, it will, once I'm done with it. Right now it doesn't do anything.&trade;)
+
+##Features?
 
 Oh, you bet we'll have features!
 
@@ -26,5 +28,3 @@ All to give you the fastest, most responsive way to make a bunch of HTML documen
 
 [mmd]: http://fletcherpenney.net/multimarkdown/
 [less]: http://lesscss.org
-
-[^future]: At least, it will, once I'm done with it. Right now it doesn't really do anything.
