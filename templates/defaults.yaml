@@ -1,0 +1,5 @@
+blog:
+  output_dir:       "./"
+  templates_dir:    "/templates"
+  styles_compiler:   "less"
+  template_compiler: "handlebars"

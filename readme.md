@@ -22,6 +22,7 @@ MarkedBlog will use all the greatest technologies and frameworks, including amaz
 * [GLI](http://davetron5000.github.com/gli/)!
 * [Less][less]!
 * [Handlebars](http://handlebarsjs.com/)!
+* [Planter](https://gist.github.com/4277795)!
 * and many more! Probably!
 
 All to give you the fastest, most responsive way to make a bunch of HTML documents that you can then host on the cheap.
