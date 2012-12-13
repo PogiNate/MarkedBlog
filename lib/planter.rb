@@ -1,17 +1,16 @@
 #!/usr/bin/env ruby
 # ruby script to create a directory structure from indented data.
-# Three ways to use it:
-# - Pipe indented (tabs or 2 spaces) text to the script
-#   - e.g. `cat "mytemplate" | planter.rb
-# - Create template.tpl files in ~/.planter and call them by their base name
-#   - e.g. Create a text file in ~/.planter/site.tpl
-#   - `planter.rb site`
-# - Call planter.rb without input and it will open your $EDITOR to create the tree on the fly
+# Two ways to use it now:
+# Pass it a path to a template file.
+# p = planter.new
+# p.plant(path/to/template.tpl)
+#
+# or just call it with a simple name and it will look in ~/.planter for a template that matches that name.
 # You can put %%X%% variables into templates, where X is a number that corresponds to the index
 # of the argument passed when planter is called.
 # e.g. `planter.rb client "Mr. Butterfinger"` would replace %%1%% in client.tpl with "Mr. Butterfinger"
 # Created by Brett Terpstra (https://gist.github.com/3767188) 
-# Slightly modified by Nate Dickson (https://gist.github.com/4277795)
+# Modified and turned into a class by Nate Dickson (https://gist.github.com/4277795)
 
 require 'yaml'
 require 'tmpdir'
@@ -60,15 +59,10 @@ class Planter
     return "---\n" + lines.join("\n")
   end
 
-  def plant(incoming = nil)
+  def plant(incoming)
     data = ""
-    if incoming != nil
-      if File.exists? incoming
-        template = incoming        
-      else
-        STDERR.puts "Could not read provided template."
-        exit 1
-      end
+    if File.exists? incoming
+       template = incoming
     else
       template = File.expand_path("~/.planter/#{incoming.gsub(/\.tpl$/, '')}.tpl")
       ARGV.shift
