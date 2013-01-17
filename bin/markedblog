@@ -14,9 +14,6 @@ program_desc 'Create a static blog from MultiMarkdown files.'
 version Markedblog::VERSION
 config_file '.markedBlog.rc'
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
 desc 'Compile the blog from the specified directory.'
 default_value './'
 arg_name '/to/compile'
