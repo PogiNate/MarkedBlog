@@ -12,6 +12,7 @@ include GLI::App
 program_desc 'Create a static blog from MultiMarkdown files.'
 
 version Markedblog::VERSION
+config_file '.markedBlog.rc'
 
 desc 'Describe some switch here'
 switch [:s,:switch]

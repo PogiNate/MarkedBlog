@@ -4,4 +4,8 @@ class Settings
   def getSettings()
 
   end
+
+  def getSetting(settingName)
+    
+  end
 end
